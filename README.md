@@ -1,4 +1,4 @@
-# AUTOHRS:
+# AUTHORS:
 Larissa Marques Freguete </br>
 Thiago Correa dos Santos
 ## Designer:
