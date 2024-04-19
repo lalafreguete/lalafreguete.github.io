@@ -1,4 +1,4 @@
-Hello! Welcome to LaboGeo's (Marine Marine Geoscience) Website!
+Hello! Welcome to LaboGeo's (Marine Marine Geoscience) Website! </br>
 This is another channel for you to access what we have been up to!
 # AUTHORS:
 Larissa Marques Freguete </br>
