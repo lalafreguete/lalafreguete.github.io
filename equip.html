@@ -50,9 +50,7 @@
           </span>
 
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
-          data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <div class="hamburger">
             <span></span>
             <span></span>
@@ -85,10 +83,6 @@
   </section>
 
   <section data-bs-version="5.1" class="content4 cid-u9mOFp3EiY mbr-fullscreen" id="design-block-3a">
-
-
-
-
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="title col-md-12 col-lg-8">
@@ -97,13 +91,14 @@
 
           <div id="myBtnContainer">
 
-            <button class="btn" onclick="filterSelection('sed-mar')"> DINÂMICA MARINHA</button>
-            <button class="btn" onclick="filterSelection('geo-mar')"> GEOFÍSICA MARINHA</button>
+            <button class="btn"  id = "sed-mar" onclick="filterSelection('sed-mar')"> DINÂMICA SEDIMENTAR</button>
+            <button class="btn"  id = "geo-mar" onclick="filterSelection('geo-mar')"> MAPEAMENTO</button>
+            <button class="btn"  id = "sed" onclick="filterSelection('sed')"> SEDIMENTOLOGIA</button>
 
             <!-- Portfolio Gallery Grid -->
             <div class="row">
               <div class="column sed-mar">
-                <div class="content">
+                <div class="content ">
                   <img src="assets/images/equip/04-1-202x213.jpg" alt="NO IMAGE">
                   <h2 class="align-center display-7"><strong>Equip 01</strong></h2>
                 </div>
@@ -121,9 +116,7 @@
                 </div>
               </div>
               <div class="column geo-mar">
-                <div class="content" style="display: flex;
-                flex-direction: column;
-                justify-content: flex-end;">
+                <div class="content" >
                   <div style="height: 100%; display: flex; align-items: center;">
                     <a href = "equip01.html"><img  src="assets/images/equip/01-742x558.jpg" alt="NO IMAGE"></a>                  
                   </div>       
@@ -145,6 +138,29 @@
 
                 </div>
               </div>
+              <div class="column sed">
+                <div class="content" >
+                  <div style="height: 100%; display: flex; align-items: center;">
+                    <a href = "equip01.html"><img  src="assets/images/equip/01-742x558.jpg" alt="NO IMAGE"></a>                  
+                  </div>       
+                  <h2 class="align-center display-7" ><strong>Equip 01</strong></h2>       
+
+                </div>
+              </div>
+              <div class="column sed"">
+                <div class="content">
+                  <img src="assets/images/equip/04-1-202x213.jpg" alt="NO IMAGE">
+                  <h2 class="align-center display-7"><strong>Equip 02</strong></h2>
+
+                </div>
+              </div>
+              <div class="column sed">
+                <div class="content">
+                  <img src="assets/images/equip/04-1-202x213.jpg" alt="NO IMAGE">
+                  <h2 class="align-center display-7"><strong>Equip 03</strong></h2>
+
+                </div>
+              </div>
 
 
               <!-- END GRID -->
@@ -155,66 +171,39 @@
     </div>
 
     <script rel="text/javascript">
-      filterSelection("all") // Execute the function and show all columns
-      function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("column");
-        if (c == "all") c = "";
-        x = document.getElementsByClassName("column");
-        let btns = document.getElementsByClassName("btn");
-        if (c != "") {
-          if (btns[0].classList.contains("active")) {
-            btns[1].classList.add("active");
-            btns[0].classList.remove("active");
-          } else {
-            btns[0].classList.add("active");
-            btns[1].classList.remove("active");
-          }
-        }
-
+       filterSelection("")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");           
+       
+        // if (c == "all") c = "";
         // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-        console.log(x)
-        for (i = 0; i < x.length; i++) {
-          w3RemoveClass(x[i], "show");
-          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+            // Add active class to the current control button (highlight it)       
+            let btns = document.getElementsByClassName("btn");        
+            
+            for (let i=0;i<btns.length;i++){
+                btns[i].classList.remove("active")                                                     
+                if(btns[i].id == c){
+                    btns[i].classList.add("active")
+                }   
+            } 
         }
-      }
-
-      // Show filtered elements
-      function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          if (arr1.indexOf(arr2[i]) == -1) {
-            element.className += " " + arr2[i];
-          }
+         // Show filtered elements
+        function w3AddClass(element, name) {          
+            element.classList.add("show")
+            element.classList.remove("hide")
         }
-      }
 
-      // Hide elements that are not selected
-      function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);
-          }
-        }
-        element.className = arr1.join(" ");
-      }
-
-      // Add active class to the current button (highlight it)
-      var btnContainer = document.getElementById("myBtnContainer");
-      var btns = btnContainer.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
-      }
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {        
+  
+            element.classList.add("hide")
+            element.classList.remove("show")
+        }     
     </script>
         
   </section>
