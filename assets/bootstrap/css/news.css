@@ -10,8 +10,16 @@
 
 /* Position the image container (needed to position the left and right arrows) */
 .container-img {
-  position: relative;  
+position: relative;
+width: 60%!important;
+margin: auto;
+
 }
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
 /* Next & previous buttons */
 .prev,
 .next {
@@ -20,17 +28,19 @@
   top: 40%;
   width: auto;
   padding: 16px;
-  margin-top: -10px;
-  color: white;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 1);
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.2);
 }
+
 /* Position the "next button" to the right */
 .next {
-  right: 0.08em !important;
+  right: 0.7em !important;
   border-radius: 3px 0 0 3px;
 }
 

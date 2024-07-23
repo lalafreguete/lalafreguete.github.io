@@ -37,7 +37,12 @@ button.active, .collapsible:hover {
 .collapsible.active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
-
+.w-100{
+  margin: auto !important;
+}
+.display-5, .display-4 {
+  margin-top: 20px !important;
+}
 
 @media (max-width: 991px) {
   #titlePapers {

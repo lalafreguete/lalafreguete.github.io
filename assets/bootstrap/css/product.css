@@ -30,13 +30,14 @@
   top: 40%;
   width: auto;
   padding: 16px;
-  margin-top: -10px;
-  color: white;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 1);
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Position the "next button" to the right */
@@ -92,6 +93,7 @@ ul.breadcrumb {
 ul.breadcrumb li {
   display: inline;
   font-size: 18px;
+  padding-left: 10px;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
